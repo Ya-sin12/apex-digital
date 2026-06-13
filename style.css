@@ -471,13 +471,20 @@ body {
 
     /* ------------ ২. কন্টাক্ট ফর্ম স্ক্রিনের বাইরে যাওয়া ফিক্স ------------ */
     .contact-section {
-        padding: 50px 15px !important; /* ডানে-বামে ১৫ পিক্সেল ফিক্সড প্যাডিং */
-        overflow: hidden;
+        padding: 40px 10px !important; /* ডানে-বামে ১0পিক্সেল ফিক্সড প্যাডিং */
+        overflow: hidden !important;
+        width: 100% !important;        /* এই নতুন লাইনটি যোগ করুন */
+        box-sizing: border-box !important; /* এই নতুন লাইনটি যোগ করুন */
     }
     
     .contact-container {
         display: block !important; /* ফ্লেক্স বাদ দিয়ে ব্লক করা হলো যেন ফর্ম নিচে নামে */
         width: 100% !important;
+        max-width: 100% !important; /* এই নতুন লাইনটি যোগ করুন */
+        margin: 0 !important;        /* এই নতুন লাইনটি যোগ করুন */
+        padding: 0 !important;       /* এই নতুন লাইনটি যোগ করুন */
+        box-sizing: border-box !important; /* এই নতুন লাইনটি যোগ করুন */
+        
     }
     
     .contact-info {
@@ -489,7 +496,7 @@ body {
     .contact-form-wrapper {
         width: 100% !important;
         max-width: 100% !important;
-        padding: 20px !important; 
+        padding: 15px !important; 
         box-sizing: border-box !important; /* প্যাডিং যেন বক্সকে স্ক্রিনের বাইরে ঠেলতে না পারে */
         margin: 0 auto !important;
     }
