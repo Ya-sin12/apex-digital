@@ -429,3 +429,61 @@ body {
     font-size: 14px;
     border-top: 1px solid #2d3748;
 }
+/* ==========================================================================
+   মোবাইল এবং ট্যাবলেটের জন্য রেসপন্সিভ সিএসএস (Media Query)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* নেভিগেশন বার মোবাইল লেআউট */
+    .navbar {
+        padding: 15px 5%;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .nav-links {
+        margin-bottom: 5px;
+    }
+    .nav-links li {
+        margin: 0 10px; /* মোবাইলে মেনুর স্পেস একটু কমানো হলো */
+    }
+
+    /* হিরো সেকশন মোবাইল সাইজ */
+    .hero-section {
+        padding: 60px 5%;
+        min-height: 70vh;
+        text-align: center;
+    }
+    .hero-content {
+        max-width: 100%;
+    }
+    .hero-content h1 {
+        font-size: 32px; /* মোবাইলে ফন্ট সাইজ ছোট করা হলো */
+    }
+    .hero-buttons {
+        justify-content: center;
+        flex-direction: column; /* বাটন দুটি নিচে নিচে চলে আসবে */
+        gap: 10px;
+    }
+    .btn-primary, .btn-secondary {
+        width: 100%; /* বাটন ফুল উইথ হবে */
+        display: block;
+    }
+
+    /* সেকশন টাইটেল */
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    /* কন্টাক্ট সেকশন রেসপন্সিভ */
+    .contact-section {
+        padding: 60px 5%;
+    }
+    .contact-container {
+        flex-direction: column; /* ফর্ম এবং ইনফো নিচে নিচে চলে আসবে */
+        gap: 40px;
+    }
+    .contact-form-wrapper {
+        padding: 25px; /* মোবাইলের জন্য প্যাডিং কমানো হলো */
+    }
+}
