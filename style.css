@@ -435,9 +435,8 @@ body {
    ========================================================================== */
 
 @media (max-width: 768px) {
-    
-    /* ------------ ১. মেনুবার জগাখিচুড়ি ফিক্স ------------ */
     .navbar {
+        display: flex !important;
         padding: 15px 4%;
         flex-direction: column; /* লোগো, মেনু আর বাটন নিচে নিচে চলে আসবে */
         gap: 12px;
@@ -446,10 +445,10 @@ body {
     
     /* মেনুর লিংকগুলো যেন একটার ওপর আরেকটা না উঠে দুই লাইনে সুন্দর ছড়ায় */
     .nav-links {
-        display: flex;
+        display: flex !important;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 12px 20px; /* ওপরে-নিচে ১২px এবং ডানে-বামে ২০px গ্যাপ */
+        gap: 10px 15px; /* ওপরে-নিচে ১২px এবং ডানে-বামে ২০px গ্যাপ */
         margin: 5px 0 12px 0;
         padding: 0;
         list-style: none;
@@ -465,7 +464,7 @@ body {
         width: auto;
         padding: 10px 25px; /* প্যাডিং ঠিক করে লেখা সোজা করা হলো */
         font-size: 15px;
-        white-space: nowrap; /* লেখা যেন কোনোভাবেই ভেঙে কেটে না যায় */
+        white-space: nowrap !important; /* লেখা যেন কোনোভাবেই ভেঙে কেটে না যায় */
     }
 
 
