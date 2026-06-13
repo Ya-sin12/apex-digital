@@ -429,61 +429,91 @@ body {
     font-size: 14px;
     border-top: 1px solid #2d3748;
 }
+
 /* ==========================================================================
-   মোবাইল এবং ট্যাবলেটের জন্য রেসপন্সিভ সিএসএস (Media Query)
+   মোবাইল এবং ট্যাবলেটের জন্য মেনু ও কন্টাক্ট ফর্মের ফাইনাল ফিক্স
    ========================================================================== */
 
 @media (max-width: 768px) {
-    /* নেভিগেশন বার মোবাইল লেআউট */
+    
+    /* ------------ ১. মেনুবার জগাখিচুড়ি ফিক্স ------------ */
     .navbar {
-        padding: 15px 5%;
-        flex-direction: column;
-        gap: 15px;
+        padding: 15px 4%;
+        flex-direction: column; /* লোগো, মেনু আর বাটন নিচে নিচে চলে আসবে */
+        gap: 12px;
         text-align: center;
     }
+    
+    /* মেনুর লিংকগুলো যেন একটার ওপর আরেকটা না উঠে দুই লাইনে সুন্দর ছড়ায় */
     .nav-links {
-        margin-bottom: 5px;
-    }
-    .nav-links li {
-        margin: 0 10px; /* মোবাইলে মেনুর স্পেস একটু কমানো হলো */
-    }
-
-    /* হিরো সেকশন মোবাইল সাইজ */
-    .hero-section {
-        padding: 60px 5%;
-        min-height: 70vh;
-        text-align: center;
-    }
-    .hero-content {
-        max-width: 100%;
-    }
-    .hero-content h1 {
-        font-size: 32px; /* মোবাইলে ফন্ট সাইজ ছোট করা হলো */
-    }
-    .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
-        flex-direction: column; /* বাটন দুটি নিচে নিচে চলে আসবে */
-        gap: 10px;
+        gap: 12px 20px; /* ওপরে-নিচে ১২px এবং ডানে-বামে ২০px গ্যাপ */
+        margin: 5px 0 12px 0;
+        padding: 0;
+        list-style: none;
     }
-    .btn-primary, .btn-secondary {
-        width: 100%; /* বাটন ফুল উইথ হবে */
-        display: block;
+    
+    .nav-links li {
+        margin: 0;
+    }
+    
+    /* গেট এ কোট বাটন ফিক্স - লেখা যেন কেটে না যায় */
+    .navbar .btn-primary {
+        display: inline-block;
+        width: auto;
+        padding: 10px 25px; /* প্যাডিং ঠিক করে লেখা সোজা করা হলো */
+        font-size: 15px;
+        white-space: nowrap; /* লেখা যেন কোনোভাবেই ভেঙে কেটে না যায় */
     }
 
-    /* সেকশন টাইটেল */
-    .section-title h2 {
-        font-size: 28px;
-    }
 
-    /* কন্টাক্ট সেকশন রেসপন্সিভ */
+    /* ------------ ২. কন্টাক্ট ফর্ম স্ক্রিনের বাইরে যাওয়া ফিক্স ------------ */
     .contact-section {
-        padding: 60px 5%;
+        padding: 50px 15px !important; /* ডানে-বামে ১৫ পিক্সেল ফিক্সড প্যাডিং */
+        overflow: hidden;
     }
+    
     .contact-container {
-        flex-direction: column; /* ফর্ম এবং ইনফো নিচে নিচে চলে আসবে */
-        gap: 40px;
+        display: block !important; /* ফ্লেক্স বাদ দিয়ে ব্লক করা হলো যেন ফর্ম নিচে নামে */
+        width: 100% !important;
     }
+    
+    .contact-info {
+        width: 100% !important;
+        margin-bottom: 30px;
+    }
+    
+    /* কন্টাক্ট ফর্মের ব্যাকগ্রাউন্ড বক্সটি স্ক্রিনের ভেতর লক */
     .contact-form-wrapper {
-        padding: 25px; /* মোবাইলের জন্য প্যাডিং কমানো হলো */
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 20px !important; 
+        box-sizing: border-box !important; /* প্যাডিং যেন বক্সকে স্ক্রিনের বাইরে ঠেলতে না পারে */
+        margin: 0 auto !important;
+    }
+    
+    /* ফর্মের ইনপুট ফিল্ড ও মেসেজ বক্স ১০০% স্ক্রিন ফিট */
+    .contact-form {
+        width: 100% !important;
+    }
+    
+    .form-group {
+        width: 100% !important;
+    }
+    
+    /* এই কোডটি ইনপুট বক্সগুলোকে স্ক্রিনের বর্ডারের বাইরে যেতে দেবে না */
+    .form-group input, 
+    .form-group textarea {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important; 
+    }
+    
+    /* মেসেজ পাঠান বাটন ফিক্স */
+    .btn-submit {
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 }
